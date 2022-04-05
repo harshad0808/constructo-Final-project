@@ -1,5 +1,6 @@
-import pic from "./image/back.jpg"
+import pic from "./image/construction-crane.gif"
 import { BrowserRouter, Route, Routes,Link } from "react-router-dom";
+
 
 
 
@@ -28,7 +29,7 @@ return (
                     <div className="text-center">
                     <input className="btn btn-dark" type="button" value="Log In"/>
                 </div>
-                <div><span>Didn't Validated Account: <Link to="/validate">Validate Now</Link></span></div>
+                <div><span>Didn't Validated Account: <Link to="/signupFlat">Validate Now</Link></span></div>
                 <div><span>Login as Construction Owner: <Link to="/logincons">Login now</Link></span></div>
                     
                 </form>

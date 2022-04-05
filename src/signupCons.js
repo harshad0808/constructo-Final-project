@@ -88,7 +88,7 @@ export default function SignupCons()
                         <input className="form-control"  value={address} onChange={addresshandle} type="tel" placeholder="Username"/><br></br>
                         
                         <label>Enter Number of Flats</label><br></br>
-                        <input className="form-control"  value={no_flats} onChange={no_flatshandle} type="password" placeholder="Password"/><br></br>
+                        <input className="form-control"  value={no_flats} onChange={no_flatshandle} type="text" placeholder="Password"/><br></br>
 
                         <label>Password</label><br></br>
                         <input className="form-control"  value={password} onChange={passwordhandle} type="password" placeholder="password"/><br></br>

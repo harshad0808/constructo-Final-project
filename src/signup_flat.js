@@ -14,12 +14,11 @@ export function SignUpFlat()
                 </div>
                
                 <form>
-                    <label>Enter Your FLat key</label><br></br>
+                    <label>Enter Your Flat key</label><br></br>
                     <input class="form-control" type="text" placeholder="Flat key"/><br></br>
                     <label>Enter Your Name</label><br></br>
                     <input class="form-control" type="text" placeholder="Name"/><br></br>
-                    <label>Password</label><br></br>
-                    <input class="form-control" type="Password" placeholder="Password"/><br></br>
+                   
                     
                   
                     <label>Enter Your Password</label><br></br>
