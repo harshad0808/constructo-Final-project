@@ -9,6 +9,8 @@ import Add_Flat from './add_flat';
 import { SignUpFlat } from './signup_flat';
 import Logincons from './logincons';
 import ConstructionDashboard from './consDashboard';
+import FlatDashboard from './flatDashboard';
+import Addvisit from './AddVisit';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
           <Route path="validate" element={<SignUpFlat/>} />
           <Route path="consDashboard" element={<ConstructionDashboard/>} />
           <Route path="signupFlat" element={<SignUpFlat/>} />
+          <Route path="flatDashboard" element={<FlatDashboard/>} />
+          <Route path="addvisit" element={<Addvisit/>} />
           
         </Routes>
   </BrowserRouter>

@@ -1,7 +1,15 @@
 
 import NavBar from "./NavBar";
+import { useEffect, useState } from "react";
 export default function ConstructionDashboard()
 {
+  useEffect(() => {
+    if(sessionStorage.getItem("C_id")==null)
+    {
+      window.location.href="/logincons";
+    }
+  });
+
     return (
         <div>
             

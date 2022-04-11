@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 export default function NavFlat()
 {
+  function removeSession()
+  {
+    sessionStorage.removeItem("usr_id");
+  }
     return(
 
         <>
@@ -13,15 +17,15 @@ export default function NavFlat()
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" href="#" to="/consDashboard">Home</Link>
+        <Link className="nav-link active" aria-current="page" href="#" to="/flatDashboard">Home</Link>
           
         </li>
         <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" href="#" to="/addflat">Book Visit</Link>
+        <Link className="nav-link active" aria-current="page" href="#" to="/addvisit">Book Visit</Link>
         </li>
        
         <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" href="#" to="/addflat">Log Out</Link>
+        <Link className="nav-link active" aria-current="page" onClick={removeSession} href="#" to="/">Log Out</Link>
         </li>
       </ul>
     </div>

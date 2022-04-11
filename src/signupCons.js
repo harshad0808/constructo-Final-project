@@ -86,7 +86,7 @@ export default function SignupCons()
         else{
           document.getElementById("name1").innerHTML =
             "";
-            temp=true;
+           // temp=true;
         }
 
 
@@ -105,7 +105,7 @@ export default function SignupCons()
         else{
           document.getElementById("address1").innerHTML =
             "";
-            temp=true;
+           // temp=true;
         }
 
 
@@ -130,7 +130,7 @@ export default function SignupCons()
         else{
           document.getElementById("email1").innerHTML =
             " ";
-            temp=true;
+            //temp=true;
         }
 
         
@@ -161,7 +161,7 @@ export default function SignupCons()
         else{
           document.getElementById("phoneno1").innerHTML =
             "";
-            temp=true;
+           // temp=true;
         }
 
 
@@ -188,7 +188,7 @@ export default function SignupCons()
         else{
           document.getElementById("rerano1").innerHTML =
             "";
-            temp=true;
+           // temp=true;
         }
 
 
@@ -208,7 +208,7 @@ export default function SignupCons()
         else{
           document.getElementById("username1").innerHTML =
             " ";
-            temp=true;
+           // temp=true;
         }
 
         if (dompassword == "") {
@@ -226,7 +226,7 @@ export default function SignupCons()
         else{
           document.getElementById("password1").innerHTML =
             " ";
-            temp=true;
+           // temp=true;
         }
 
 
@@ -253,7 +253,7 @@ export default function SignupCons()
         else{
           document.getElementById("flatno1").innerHTML =
             "";
-            temp=true;
+            //temp=true;
         }
 
         if(dompassword!=domconpass)

@@ -4,7 +4,12 @@ import axios from "axios";
 import NavBar from "./NavBar";
 export default function Add_Flat()
 {
-
+  useEffect(() => {
+    if(sessionStorage.getItem("C_id")==null)
+    {
+      window.location.href="/logincons";
+    }
+  });
     
     const [name, setName] = useState("");
     const [phoneno, setPhoneno] = useState("");
@@ -39,9 +44,9 @@ export default function Add_Flat()
 
       const submit = () => {
         
-        axios.post("http://localhost:8080/flat/add", {
+        axios.put("http://localhost:8080/flat/add", {
             usr_Name:name,
-            otal_amount:totalAmount,
+            total_amount:totalAmount,
             paid_amount:paidAmount,
             next_installment:nextInstallment,
             possesion_Date:possesionDate,

@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 export default function NavBar()
 {
+  function removeSession()
+  {
+    sessionStorage.removeItem("C_id");
+  }
     return(
         <>
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,7 +30,7 @@ export default function NavBar()
         <Link class="nav-link active" aria-current="page" href="#" to="/addflat">Add Installment</Link>
         </li>
         <li class="nav-item">
-        <Link class="nav-link active" aria-current="page" href="#" to="/addflat">Log Out</Link>
+        <Link class="nav-link active" aria-current="page"  onClick={removeSession} href="#" to="/logincons">Log Out</Link>
         </li>
       </ul>
     </div>
