@@ -11,6 +11,7 @@ import Logincons from './logincons';
 import ConstructionDashboard from './consDashboard';
 import FlatDashboard from './flatDashboard';
 import Addvisit from './AddVisit';
+import ForgotPassword from './forgetpassword';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="signupFlat" element={<SignUpFlat/>} />
           <Route path="flatDashboard" element={<FlatDashboard/>} />
           <Route path="addvisit" element={<Addvisit/>} />
+          <Route path="forgotpassword" element={<ForgotPassword/>} />
           
         </Routes>
   </BrowserRouter>

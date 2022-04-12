@@ -1,14 +1,29 @@
 
 import NavBar from "./NavBar";
 import { useEffect, useState } from "react";
+import axios from "axios";
 export default function ConstructionDashboard()
 {
+  const [data1, setData1] = useState([]);
+  const [visitData, setVisitData] = useState([])
+
   useEffect(() => {
     if(sessionStorage.getItem("C_id")==null)
     {
       window.location.href="/logincons";
     }
+    getData();
   });
+
+var retrievedata;
+ async function getData()
+  {
+  await axios.get(`http://localhost:8080/flat/construct/${sessionStorage.getItem("C_id")}`).then(json => setData1(json.data));
+  await axios.get(`http://localhost:8080/visitbook/${sessionStorage.getItem("C_id")}`).then(json => setVisitData(json.data))
+          
+           
+       
+  }
 
     return (
         <div>
@@ -29,6 +44,7 @@ export default function ConstructionDashboard()
                     <div className="row">
         
                         <table className="table">
+                          
                             <thead>
                               <tr>
                                 <th scope="col">Flat Key</th>
@@ -39,24 +55,16 @@ export default function ConstructionDashboard()
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                              {data1.map((item,index)=>(
+                                <tr key={index}>
+                                <th scope="row">{item.usr_Key}</th>
+                                <td>{item.usr_Name}</td>
+                                <td>{item.total_amount}</td>
+                                <td>{item.paid_amount}</td>
+                                <td>{item.total_amount-item.paid_amount}</td>
                               </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
+                              ))}
+                            
                             </tbody>
                           </table>
                     </div>
@@ -79,29 +87,22 @@ export default function ConstructionDashboard()
                                 <th scope="col">Flat Key</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Date</th>
+                                <th scope="col">Time Slot</th>
                                
                                
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
+                              {visitData.map((item,index)=>(
+                                 <tr>
+                                 <th scope="row">{item.fVisit.usr_Key}</th>
+                                 <td>{item.fVisit.usrName}</td>
+                                 <td>{item.visit_Date}</td>
+                                 <td>{item.timeSlot}</td>
+                              
+                               </tr>
+                              ))}
                              
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                        
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                  
-                              </tr>
                             </tbody>
                           </table>
                     </div>

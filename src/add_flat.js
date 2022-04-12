@@ -44,7 +44,7 @@ export default function Add_Flat()
 
       const submit = () => {
         
-        axios.put("http://localhost:8080/flat/add", {
+        axios.post("http://localhost:8080/flat/add", {
             usr_Name:name,
             total_amount:totalAmount,
             paid_amount:paidAmount,

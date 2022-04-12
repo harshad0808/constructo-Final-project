@@ -22,9 +22,15 @@ export default function Addvisit() {
             timeSlot: timeslot,
             fVisit: {
                 uId: sessionStorage.getItem("usr_id"),
+                
+                
                 },
+                consowner: {
+                    c_id: 21
+                }
 
             });
+            console.log(sessionStorage.getItem("construct_id"))
     };
 
 

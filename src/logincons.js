@@ -63,6 +63,7 @@ export default function Logincons()
                     <div class="text-center">
                     <input class="btn btn-dark" type="button" onClick={submit} value="Log In"/>
                 </div>
+                <div><span>Forget Password: <Link to="/forgotpassword">Reset Now</Link></span></div>
                 <div><span>Dont have Account: <Link to="/SignupCons">Register Now</Link></span></div>
                 <div><span>Login as Flat Owner: <Link to="/">Login now</Link></span></div>
                     
