@@ -31,7 +31,7 @@ export default function LoginFlat()
 
         });
         sessionStorage.setItem("usr_id",data.data.uId);
-        sessionStorage.setItem("construct_id",data.data.consowner.c_id);
+        sessionStorage.setItem("construct_id",data.data.cOwner.c_id);
         
 
         

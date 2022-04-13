@@ -272,7 +272,7 @@ export default function SignupCons()
 
           document.getElementById("conpass1").innerHTML =
           "";  
-          temp=true;
+          
         }
 
         if(temp==false)

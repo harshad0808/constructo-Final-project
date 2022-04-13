@@ -14,6 +14,7 @@ import Addvisit from './AddVisit';
 import ForgotPassword from './forgetpassword';
 import Admin from './admin';
 import AdminNav from './adminNav';
+import AddUpdates from './AddUpdates';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="forgotpassword" element={<ForgotPassword/>} />
           <Route path="admin" element={<Admin></Admin>} />
           <Route path="adminNav" element={<AdminNav></AdminNav>} />
+          <Route path="addupdates" element={<AddUpdates></AddUpdates>} />
           
           
         </Routes>

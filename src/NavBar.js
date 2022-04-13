@@ -24,7 +24,7 @@ export default function NavBar()
         <Link class="nav-link active" aria-current="page" href="#" to="/addflat">Add Flat Owner</Link>
         </li>
         <li class="nav-item">
-        <Link class="nav-link active" aria-current="page" href="#" to="/addflat">Add Updates</Link>
+        <Link class="nav-link active" aria-current="page" href="#" to="/addupdates">Add Updates</Link>
         </li>
         <li class="nav-item">
         <Link class="nav-link active" aria-current="page" href="#" to="/addflat">Add Installment</Link>
