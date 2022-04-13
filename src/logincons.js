@@ -30,11 +30,15 @@ export default function Logincons()
         sessionStorage.setItem("C_id",data.data.c_id);
         
         console.log(typeof data);
-        console.log(data.data.usrName);
-        if(data.data.usrName==username && data.data.c_Password==password)
+        console.log(data.data.verify_Status);
+        if(data.data.usrName==username && data.data.c_Password==password && data.data.verify_Status=="admin")
         {
             console.log("inside if");
            
+            window.location.href="/admin";
+        }
+        else if(data.data.usrName==username && data.data.c_Password==password)
+        {
             window.location.href="/consDashboard";
         }
         else

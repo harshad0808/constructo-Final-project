@@ -12,6 +12,8 @@ import ConstructionDashboard from './consDashboard';
 import FlatDashboard from './flatDashboard';
 import Addvisit from './AddVisit';
 import ForgotPassword from './forgetpassword';
+import Admin from './admin';
+import AdminNav from './adminNav';
 
 
 function App() {
@@ -31,6 +33,9 @@ function App() {
           <Route path="flatDashboard" element={<FlatDashboard/>} />
           <Route path="addvisit" element={<Addvisit/>} />
           <Route path="forgotpassword" element={<ForgotPassword/>} />
+          <Route path="admin" element={<Admin></Admin>} />
+          <Route path="adminNav" element={<AdminNav></AdminNav>} />
+          
           
         </Routes>
   </BrowserRouter>
