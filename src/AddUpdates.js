@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NavBar from "./NavBar";
-
+import Swal from "sweetalert2";
 
 export default function AddUpdates() {
   const [progressDetails, setDetails] = useState("");
@@ -26,7 +26,12 @@ export default function AddUpdates() {
         "Content-Type": "multipart/form-data",
        
       },
-    });
+    }).then(
+      Swal.fire({
+        icon: "success",
+        title: "success",
+        text: "Update Added Successfully",})
+    );
   }
 
   return (

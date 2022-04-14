@@ -39,11 +39,19 @@ export default function Logincons()
         }
         else if(data.data.usrName==username && data.data.c_Password==password)
         {
-            window.location.href="/consDashboard";
+            if(data.data.verify_Status=="verified")
+            {
+                window.location.href="/consDashboard";
+            }
+            else{
+                console.log("inside span");
+                document.getElementById("verifyspan").innerHTML="Your Account is not Verified Yet";
+            }
+            
         }
         else
         {
-            console.log("inside else");
+            document.getElementById("verifyspan").innerHTML="You Have Entered Wrong Username Or Password";
             
 
         }
@@ -54,11 +62,11 @@ export default function Logincons()
     backgroundSize:" 100% 100%"}}>
         <div class="row  justify-content-center align-content-center" style={{height: "100vh"}}>
             <div class="col-4  p-3" style={{backgroundColor: 'rgba(233, 192, 13, 0.2)'}}>
-                <div class="text-center text-light">
+                <div class="text-center text-dark">
                     <h2>Log In - (Construction)</h2>
                 </div>
                
-                <form class="text-light">
+                <form class="text-dark fw-bold">
                     <label>Enter Your Username:</label><br></br>
                     <input class="form-control" type="text" value={username} onChange={usernamehandle} placeholder="Username"/><br></br>
                     <label>Enter Your Password:</label><br></br>
@@ -67,6 +75,7 @@ export default function Logincons()
                     <div class="text-center">
                     <input class="btn btn-dark" type="button" onClick={submit} value="Log In"/>
                 </div>
+                <div><span id="verifyspan" className="text-danger font-weight-bold"></span></div>
                 <div><span>Forget Password: <Link to="/forgotpassword">Reset Now</Link></span></div>
                 <div><span>Dont have Account: <Link to="/SignupCons">Register Now</Link></span></div>
                 <div><span>Login as Flat Owner: <Link to="/">Login now</Link></span></div>

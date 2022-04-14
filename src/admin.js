@@ -18,6 +18,13 @@ export default function Admin()
             await axios.get(`http://localhost:8080/construction/notverified`).then(json => setData1(json.data));
   
           }
+
+         async function verify(x)
+          {
+            const data=await axios.post(`http://localhost:8080/construction/getVerify/${x}`, {
+            
+          });
+          }
   
 
     
@@ -51,7 +58,7 @@ export default function Admin()
                                 <td>{item.rera_No}</td>
                                 <td>{item.verify_Status}</td>
                                 <td>{item.phone_No}</td>
-                                <td><input className=" btn btn-dark" value="Verify"/></td>
+                                <td><input type={"button"} className=" btn btn-dark" value="Verify" onClick={() => { verify(item.c_id);}}/></td>
                                 </tr>
 
                             ))}

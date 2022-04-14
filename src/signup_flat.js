@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import pic from "./image/back.jpg";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export function SignUpFlat()
 {
@@ -33,7 +34,12 @@ export function SignUpFlat()
             usr_Key: key,
             usr_Password: "1234",
 
-        });
+        }).then(
+          Swal.fire({
+            icon: "success",
+            title: "success",
+            text: "Your Account Validated Successfully, You can Login now",})
+        );
       };
 
 

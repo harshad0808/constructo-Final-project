@@ -2,6 +2,7 @@ import NavFlat from "./navFlat";
 import pic from "./image/back.jpg";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Addvisit() {
     const [date, setdate] = useState("");
@@ -26,10 +27,16 @@ export default function Addvisit() {
                 
                 },
                 consowner: {
-                    c_id: 21
+                    c_id:sessionStorage.getItem("construct_id")
                 }
 
-            });
+            }).then(
+                Swal.fire({
+                    icon: "success",
+                    title: "success",
+                    text: "Your Visit Request Added Succesfully",})
+    
+            );
             console.log(sessionStorage.getItem("construct_id"))
     };
 

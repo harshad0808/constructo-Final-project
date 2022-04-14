@@ -2,6 +2,7 @@ import pic from "./image/back.jpg"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import NavBar from "./NavBar";
+import Swal from "sweetalert2";
 export default function Add_Flat()
 {
   useEffect(() => {
@@ -58,7 +59,12 @@ export default function Add_Flat()
 
 
 
-        });
+        }).then(
+          Swal.fire({
+            icon: "success",
+            title: "success",
+            text: "Flat Owner Added Successfully",})
+        );
       };
       
 

@@ -29,7 +29,7 @@ export default function FlatDashboard() {
     setName(data.data.usr_Name);
 
     const data1 = await axios.get(
-      `http://localhost:8080/construction/images/21`,
+      `http://localhost:8080/construction/images/${sessionStorage.getItem("construct_id")}`,
       {}
     );
     //setImage(data1.data.result.img);
@@ -98,12 +98,26 @@ export default function FlatDashboard() {
           </div>
         </div>
 
-        <div className="bg-primary">
-          {image.map((images) => (
-            <img src={"/images/" + images.img} alt="" />
+      
+        <div className="row justify-content-center">
+          <div className="col-8">
+            <div className="row">
+        {image.map((images) => (
+             <div className="card mb-3">
+             <img className="card-img-top" style={{width:"100%" ,height:"400px"}} src={"/images/" + images.img} alt="Card image cap"></img>
+             <div className="card-body">
+               <h5 className="card-title">Recent Update ({images.updateDate})</h5>
+               <p className="card-text">{images.details}</p>
+               <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+             </div>
+           </div>
           ))}
+       
+       </div>
+       </div>
         </div>
       </div>
+
     </div>
   );
 }
