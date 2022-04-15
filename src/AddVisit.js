@@ -5,6 +5,28 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 export default function Addvisit() {
+
+    useEffect(() => {
+        var date1=new Date();
+var cdate=date1.getDate();
+var month=date1.getMonth()+1;
+var year=date1.getFullYear();
+if(cdate<10)
+{
+    cdate="0"+cdate;
+}
+if(month<10)
+{
+    month="0"+month;
+}
+var mindate=year + "-" + month + "-" + cdate;
+document.getElementById("dt").setAttribute('min',mindate);
+console.log(mindate)
+
+      }, []);
+    
+
+
     const [date, setdate] = useState("");
     const [timeslot, settimeslot] = useState("");
 
@@ -59,7 +81,7 @@ export default function Addvisit() {
 
                     <form>
                         <label>Select Date</label><br></br>
-                        <input className="form-control" value={date} onChange={datedhandle} type="date" placeholder="Name" /><br></br>
+                        <input className="form-control" id="dt" value={date} onChange={datedhandle} type="date" placeholder="Name" /><br></br>
                         <label>Select Time Slot</label><br></br>
                         <select className="form-select " onChange={timeslotdhandle} aria-label="Default select example">
                             <option selected>10 am to 11 am</option>
@@ -80,7 +102,9 @@ export default function Addvisit() {
                     </form>
                 </div>
             </div>
+            
         </div>
+        
 
     );
 }

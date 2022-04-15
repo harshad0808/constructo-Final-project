@@ -52,7 +52,7 @@ export default function SignupCons()
 
       function isValid()
       {
-        let temp=true;
+        var temp=true;
 
         var domname=document.getElementById("name").value;
         var domaddress=document.getElementById("address").value;
@@ -70,18 +70,21 @@ export default function SignupCons()
           document.getElementById("name1").innerHTML =
             " ** Please fill the Name field ";
           temp=false;
+          console.log("1");
         }
         else     
         if (domname.length <= 2 || domname.length > 20) {
           document.getElementById("name1").innerHTML =
             " ** Name length must be between 2 and 20 ";
             temp=false;
+            console.log("2");
         }
         else
         if (!isNaN(domname)) {
           document.getElementById("name1").innerHTML =
             " ** only characters are allowed";
             temp=false;
+            console.log("3");
         }
         else{
           document.getElementById("name1").innerHTML =
@@ -94,12 +97,14 @@ export default function SignupCons()
           document.getElementById("address1").innerHTML =
             " ** Please fill the address field ";
           temp=false;
+          console.log("4");
         }
         else     
         if (domaddress.length <=10) {
           document.getElementById("address1").innerHTML =
             " ** Address length must be greater than  10 ";
             temp=false;
+            console.log("5");
         }
        
         else{
@@ -113,6 +118,7 @@ export default function SignupCons()
           document.getElementById("email1").innerHTML =
             " ** Please fill the Email ID field ";
             temp=false;
+            console.log("6");
         }
         else
         
@@ -120,12 +126,14 @@ export default function SignupCons()
           document.getElementById("email1").innerHTML =
             " ** Invalid @ position ";
             temp=false;
+            console.log("7");
         }
         else
         if ((domemail.charAt(domemail.length-4)!='.') && (domemail.charAt(domemail.length-3)!='.')) {
           document.getElementById("email1").innerHTML =
             " ** Invalid . position ";
             temp=false;
+            console.log("8");
         }
         else{
           document.getElementById("email1").innerHTML =
@@ -138,6 +146,7 @@ export default function SignupCons()
           document.getElementById("phoneno1").innerHTML =
             " ** Please fill the Mobile Number field ";
             temp=false;
+            console.log("9");
         }
         else
 
@@ -145,18 +154,21 @@ export default function SignupCons()
           document.getElementById("phoneno1").innerHTML =
             " ** User must write digits only not characters ";
             temp=false;
+            console.log("10");
         }
         else
         if (domphoneno.length!=10) {
           document.getElementById("phoneno1").innerHTML =
             " ** Mobile number must be 10 digits only ";
             temp=false;
+            console.log("11");
         }
         else if(regexExp.test(domphoneno)==false)
         {
           document.getElementById("phoneno1").innerHTML =
             " ** Mobile number must start with 6 to 9 digits ";
             temp=false;
+            console.log("12");
         }
         else{
           document.getElementById("phoneno1").innerHTML =
@@ -170,6 +182,7 @@ export default function SignupCons()
           document.getElementById("rerano1").innerHTML =
             " ** Please fill the rera number field ";
             temp=false;
+            console.log("13");
         }
         else
 
@@ -177,12 +190,14 @@ export default function SignupCons()
           document.getElementById("rerano1").innerHTML =
             " ** User must write digits only not characters ";
             temp=false;
+            console.log("14");
         }
         else
         if (domrerano.length!=10) {
           document.getElementById("rerano1").innerHTML =
             " ** Rera number must be 10 digits only ";
             temp=false;
+            console.log("15");
         }
         
         else{
@@ -197,6 +212,7 @@ export default function SignupCons()
           document.getElementById("username1").innerHTML =
             " ** Please fill the Username field ";
             temp=false;
+            console.log("16");
         }
         else
         
@@ -204,6 +220,7 @@ export default function SignupCons()
           document.getElementById("username1").innerHTML =
             " ** Username length must be between 2 and 10 ";
             temp=false;
+            console.log("17");
         }
         else{
           document.getElementById("username1").innerHTML =
@@ -215,6 +232,7 @@ export default function SignupCons()
           document.getElementById("password1").innerHTML =
             " ** Please fill the Password field ";
             temp=false;
+            console.log("18");
         }
         else
 
@@ -222,40 +240,9 @@ export default function SignupCons()
           document.getElementById("password1").innerHTML =
             " ** Password length must be between 8 and 20 ";
             temp=false;
-        }
-        else{
-          document.getElementById("password1").innerHTML =
-            " ";
-           // temp=true;
-        }
-
-
-        if (domflatno == "") {
-          document.getElementById("flatno1").innerHTML =
-            " ** Please fill the number of flat field ";
-            temp=false;
+            console.log("19");
         }
         else
-
-        if (isNaN(domflatno)) {
-          document.getElementById("flatno1").innerHTML =
-            " ** User must write digits only not characters ";
-            temp=false;
-        }
-        else
-        if (domflatno.length>1000) {
-          document.getElementById("flatno1").innerHTML =
-            " ** Number of flats must be less than 1000 ";
-            temp=false;
-        }
-        
-        
-        else{
-          document.getElementById("flatno1").innerHTML =
-            "";
-            //temp=true;
-        }
-
         if(dompassword!=domconpass)
         {
           document.getElementById("password1").innerHTML =
@@ -264,6 +251,7 @@ export default function SignupCons()
             document.getElementById("conpass1").innerHTML =
             " ** Password and Confirm Password should match ";  
             temp=false;
+            console.log("23");
         }
         else{
           document.getElementById("password1").innerHTML =
@@ -275,6 +263,39 @@ export default function SignupCons()
           
         }
 
+        
+
+
+        if (domflatno == "") {
+          document.getElementById("flatno1").innerHTML =
+            " ** Please fill the number of flat field ";
+            temp=false;
+            console.log("20");
+        }
+        else
+
+        if (isNaN(domflatno)) {
+          document.getElementById("flatno1").innerHTML =
+            " ** User must write digits only not characters ";
+            temp=false;
+            console.log("21");
+        }
+        else
+        if (domflatno.length>1000) {
+          document.getElementById("flatno1").innerHTML =
+            " ** Number of flats must be less than 1000 ";
+            temp=false;
+            console.log("22");
+        }
+        
+        
+        else{
+          document.getElementById("flatno1").innerHTML =
+            "";
+            //temp=true;
+        }
+
+       
         if(temp==false)
         {
           console.log(temp);

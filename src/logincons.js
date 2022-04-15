@@ -17,6 +17,52 @@ export default function Logincons()
       };
 
 
+      
+      function isValid()
+      {
+          var temp=true;
+          var domusername=document.getElementById("username").value;
+          var dompassword=document.getElementById("password").value;
+
+          if (domusername== "") {
+            document.getElementById("username1").innerHTML =
+              " ** Please fill username ";
+              temp=false;
+              
+          }
+          else
+          {
+            document.getElementById("username1").innerHTML =
+            "";
+          }
+          if (dompassword == "") {
+            document.getElementById("password1").innerHTML =
+              " ** Please fill the Password field ";
+              temp=false;
+              
+          }
+          else{
+            document.getElementById("password1").innerHTML =
+            "";
+          }
+
+          if(temp==false)
+          {
+            console.log(temp);
+            return;
+          }
+          else{
+            submit();
+    
+            document.getElementById("password").value="";
+           
+            document.getElementById("username").value="";
+           
+  
+          }
+      }
+
+
      const   submit = async () => {
         
         const data=await axios.post("http://localhost:8080/construction/logincons", {
@@ -68,12 +114,13 @@ export default function Logincons()
                
                 <form class="text-dark fw-bold">
                     <label>Enter Your Username:</label><br></br>
-                    <input class="form-control" type="text" value={username} onChange={usernamehandle} placeholder="Username"/><br></br>
+                    <input class="form-control"id="username" type="text" value={username} onChange={usernamehandle} placeholder="Username"/><br></br>
+                    <div> <span id="username1" class="text-danger "></span></div>
                     <label>Enter Your Password:</label><br></br>
-                    <input class="form-control" type="password" value={password} onChange={passwordhandle} placeholder="Username"/><br></br>
-
+                    <input class="form-control" id="password" type="password" value={password} onChange={passwordhandle} placeholder="Username"/><br></br>
+                    <div> <span id="password1" class="text-danger "></span></div>
                     <div class="text-center">
-                    <input class="btn btn-dark" type="button" onClick={submit} value="Log In"/>
+                    <input class="btn btn-dark" type="button" onClick={isValid} value="Log In"/>
                 </div>
                 <div><span id="verifyspan" className="text-danger font-weight-bold"></span></div>
                 <div><span>Forget Password: <Link to="/forgotpassword">Reset Now</Link></span></div>

@@ -9,6 +9,41 @@ export default function AddUpdates() {
 
   let [image, setImage] = useState(null);
 
+
+  function isValid()
+  {
+    var temp=true;
+    var domdetails=document.getElementById("details");
+    console.log("inside function")
+    if (domdetails== "") {
+      document.getElementById("details1").innerHTML =
+        " ** Please fill Details ";
+        temp=false;
+        
+    }
+    else
+    {
+      document.getElementById("details1").innerHTML =
+      "";
+    }
+
+
+    if(temp==false)
+          {
+            console.log(temp);
+            return;
+          }
+          else{
+            AddData();
+    
+            document.getElementById("details").value="";
+           
+            
+           
+  
+          }
+  }
+
   async function AddData() {
     let form = new FormData();
     form.append("id",sessionStorage.getItem("C_id"));
@@ -41,7 +76,7 @@ export default function AddUpdates() {
       <form style={{ width: "800px", margin: "auto", marginTop: "40px" }}>
         <div className="form-group">
           <label style={{ margin: "10px" }}>Property Details</label>
-          <textarea
+          <textarea id="details"
             onChange={(e) => {
               setDetails(e.target.value);
             }}
@@ -49,6 +84,7 @@ export default function AddUpdates() {
             className="form-control"
             placeholder="Details"
           />
+           <div> <span id="details1" class="text-danger "></span></div>
         </div>
 
         <div className="form-group">
@@ -60,6 +96,7 @@ export default function AddUpdates() {
             className="form-control"
             type="date"
           />
+          
         </div>
         <div className="form-group">
           <label style={{ margin: "10px" }}>Add image</label>
@@ -75,9 +112,7 @@ export default function AddUpdates() {
        
 
         <button
-          onClick={() => {
-            AddData();
-          }}
+          onClick={isValid}
           style={{ margin: "10px" }}
           type="button"
           className="btn btn-primary"
